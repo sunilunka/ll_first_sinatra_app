@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140726181308) do
+ActiveRecord::Schema.define(version: 20140727003003) do
+
+  create_table "authors", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
 
   create_table "messages", force: true do |t|
-    t.string "title"
-    t.string "author"
-    t.string "content"
+    t.string   "author"
+    t.string   "content"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "author_id"
   end
 
 end
